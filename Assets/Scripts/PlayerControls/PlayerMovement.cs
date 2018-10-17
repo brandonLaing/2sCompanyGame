@@ -27,8 +27,6 @@ public class PlayerMovement : MonoBehaviour
 
   private void Update()
   {
-    CheckIfChangeState();
-
     CheckMoveState();
 
     MovePlayer();
@@ -52,23 +50,6 @@ public class PlayerMovement : MonoBehaviour
     if (moveState == MovementState.stunned)
     {
       moveSpeed = myStats.playerSpeedStunned;
-    }
-
-  }
-
-  // checks if you want to change your move state
-  private void CheckIfChangeState()
-  {
-    if (CanChageState)
-    {
-      if (Input.GetKey(KeyCode.LeftShift))
-      {
-        moveState = MovementState.running;
-      }
-      else
-      {
-        moveState = MovementState.walking;
-      }
     }
   }
 

@@ -15,6 +15,7 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(PlayerCameraFollowScript))]
 [RequireComponent(typeof(PlayerRotator))]
+[RequireComponent(typeof(PlayerAnimationController))]
 public class PlayerStats : MonoBehaviour
 {
   [Header("Health")]
@@ -39,6 +40,7 @@ public class PlayerStats : MonoBehaviour
 
   public bool cameraInvertY = true;
   public bool cameraInvertX = false;
+
   #region Life Function
   public void Damage(int damage)
   {
