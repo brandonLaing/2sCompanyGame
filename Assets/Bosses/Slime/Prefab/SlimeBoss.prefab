@@ -138,11 +138,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myState: 2
-  jumpForce: 50000
-  density: 5
+  health: 0
+  jumpForce: 5
+  density: 166.43
   volume: 0
   fallMultiplier: 2.5
-  jumpRequest: 0
   target: {fileID: 0}
-  rotationRate: 90
+  rotationRate: 1
+  stopLookingAngle: 1
   HitGroundWaitTime: 5
+  testDamage: 0
+  doTestDamage: 0

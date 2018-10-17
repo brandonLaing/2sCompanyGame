@@ -246,8 +246,8 @@ Prefab:
       objectReference: {fileID: 2055655395}
     - target: {fileID: 114027357848616638, guid: 5744772c787aa964681e40ddc601afb6,
         type: 2}
-      propertyPath: myState
-      value: 2
+      propertyPath: health
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5744772c787aa964681e40ddc601afb6, type: 2}
@@ -296,6 +296,11 @@ Prefab:
       propertyPath: CollisionModule.plane0
       value: 
       objectReference: {fileID: 238371823}
+    - target: {fileID: 198053430407906808, guid: 642098cc17bfa4e4b8da8a60cb1f22a2,
+        type: 2}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 642098cc17bfa4e4b8da8a60cb1f22a2, type: 2}
   m_IsPrefabAsset: 0
