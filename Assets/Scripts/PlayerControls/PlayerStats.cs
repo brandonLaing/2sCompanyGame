@@ -16,11 +16,11 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerCameraFollowScript))]
 [RequireComponent(typeof(PlayerRotator))]
 [RequireComponent(typeof(PlayerAnimationController))]
-public class PlayerStats : MonoBehaviour
+public class PlayerStats : MonoBehaviour, IDamageable, IKillable, IAttacking
 {
   [Header("Health")]
   public int maxHealth = 20;
-  public int health = 20;
+  public float health = 20;
 
   [Header("Movement")]
   public float playerSpeedWalking = 5F;
@@ -41,8 +41,16 @@ public class PlayerStats : MonoBehaviour
   public bool cameraInvertY = true;
   public bool cameraInvertX = false;
 
+  private void Update()
+  {
+    if (Input.GetKeyDown(KeyCode.L) && Input.GetKey(KeyCode.LeftShift))
+    {
+      Cursor.lockState = CursorLockMode.Locked;
+      Cursor.visible = false;
+    }
+  }
   #region Life Function
-  public void Damage(int damage)
+  public void Damage(float damage, GameObject obj)
   {
     if (health - damage <= 0)
     {
@@ -71,7 +79,13 @@ public class PlayerStats : MonoBehaviour
 
   public void Kill()
   {
-    throw new NotImplementedException("Implement Death");
+    //throw new NotImplementedException("Implement Death");
+  }
+
+  public void Attack(IDamageable other, GameObject otherObj)
+  {
+    Debug.LogWarning(this.gameObject.name + " is attacking " + otherObj);
+    other.Damage(10, gameObject);
   }
   #endregion
 

@@ -15,11 +15,11 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ignore Player
+  - Only Player
+  - Player
+  - Ground
+  - Only Ground
   - 
   - 
   - 
