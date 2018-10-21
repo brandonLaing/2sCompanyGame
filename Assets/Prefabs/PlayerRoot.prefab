@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4049496693857704}
   m_Layer: 0
   m_Name: CameraRoot
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,9 +38,9 @@ GameObject:
   - component: {fileID: 136171532609321488}
   - component: {fileID: 33000613893070342}
   - component: {fileID: 23244486402385310}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PlayerBody
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +59,8 @@ GameObject:
   - component: {fileID: 114544192825049876}
   - component: {fileID: 114559291725183756}
   - component: {fileID: 114848876874672812}
-  m_Layer: 0
+  - component: {fileID: 114115785520370010}
+  m_Layer: 11
   m_Name: PlayerRoot
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -93,10 +94,9 @@ GameObject:
   - component: {fileID: 4821025468619556}
   - component: {fileID: 33968522717942262}
   - component: {fileID: 23390046877648262}
-  - component: {fileID: 65312073220312468}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -309,18 +309,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &65312073220312468
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1968304405191462}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!81 &81763427416244800
 AudioListener:
   m_ObjectHideFlags: 1
@@ -343,6 +331,19 @@ MonoBehaviour:
   CanChageState: 1
   moveSpeed: 0
   playerBody: {fileID: 4843958351897652}
+--- !u!114 &114115785520370010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1596133311645092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a681f8e144bd6bc4692decf83835fa3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerBody: {fileID: 4843958351897652}
+  representation: {fileID: 0}
 --- !u!114 &114337845690361172
 MonoBehaviour:
   m_ObjectHideFlags: 1
