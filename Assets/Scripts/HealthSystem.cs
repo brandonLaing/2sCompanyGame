@@ -72,6 +72,8 @@ public class HealthSystem : MonoBehaviour
     {
       GameObject.Destroy(child.gameObject);
     }
+
+    Destroy(this.gameObject);
   }
 
   public void Invincibility(bool godMode)
