@@ -50,7 +50,7 @@ public class PlayerStats : MonoBehaviour, IDamageable, IKillable, IAttacking
     }
   }
   #region Life Function
-  public void Damage(float damage, GameObject obj)
+  public void Damage(float damage, string obj)
   {
     if (health - damage <= 0)
     {
@@ -85,7 +85,7 @@ public class PlayerStats : MonoBehaviour, IDamageable, IKillable, IAttacking
   public void Attack(IDamageable other, GameObject otherObj)
   {
     Debug.LogWarning(this.gameObject.name + " is attacking " + otherObj);
-    other.Damage(10, gameObject);
+    other.Damage(10, gameObject.name);
   }
   #endregion
 

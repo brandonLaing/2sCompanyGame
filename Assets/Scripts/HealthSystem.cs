@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthSystem : MonoBehaviour
+public class HealthSystem : MonoBehaviour, IDamageable
 {
   [Header("Health Settings")]
   public float healthMin;
@@ -55,7 +55,7 @@ public class HealthSystem : MonoBehaviour
   }
 
   // damages for ammount
-  public void Damage(float damage)
+  public void Damage(float damage, string attacker)
   {
     Health -= damage;
   }

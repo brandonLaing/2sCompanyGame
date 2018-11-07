@@ -13,7 +13,7 @@ public class HealthSystemEditor : Editor
     HealthSystem myHealthSyst = (HealthSystem)target;
     if (GUILayout.Button("Damage"))
     {
-      myHealthSyst.Damage(1);
+      myHealthSyst.Damage(1, "God");
     }
 
     if (GUILayout.Button("Heal"))

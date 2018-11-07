@@ -187,9 +187,9 @@ public class SlimeMovementScript : MonoBehaviour, IDamageable, IAttacking, IKill
   #endregion
 
   #region Combat 
-  public void Damage(float damage, GameObject obj)
+  public void Damage(float damage, string obj)
   {
-    Debug.Log(gameObject.name + " was damaged for " + damage + " by " + obj.name);
+    Debug.Log(gameObject.name + " was damaged for " + damage + " by " + obj);
 
     Health -= damage;
 
@@ -201,12 +201,12 @@ public class SlimeMovementScript : MonoBehaviour, IDamageable, IAttacking, IKill
   // does attack on another IDamageable
   public void Attack(IDamageable other, GameObject otherObj)
   {
-    other.Damage(damagePerSecond * Time.deltaTime, gameObject);
+    other.Damage(damagePerSecond * Time.deltaTime, gameObject.name);
   }
 
   public void ImpactAttack(IDamageable other)
   {
-    other.Damage(damageOnImpact, gameObject);
+    other.Damage(damageOnImpact, gameObject.name);
   }
 
   // what is called when IKillable is killed
@@ -223,7 +223,7 @@ public class SlimeMovementScript : MonoBehaviour, IDamageable, IAttacking, IKill
   public bool doTestDamage;
   private void TestDoDamage()
   {
-    Damage(testDamage, gameObject);
+    Damage(testDamage, gameObject.name);
 
   }
 
