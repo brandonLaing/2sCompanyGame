@@ -7,13 +7,16 @@ public enum AttackMode
   Melee, Ranged
 }
 
-public class PlayerTempAttack : MonoBehaviour {
+public class PlayerTempAttack : MonoBehaviour, IAttacking
+{
 
   private PlayerStats ps;
   public Transform playerBody;
   public Transform representation;
 
   public Transform gunBarrle;
+
+  public float attackDamage;
 
   public AttackMode currentAttackMode;
 
@@ -22,7 +25,8 @@ public class PlayerTempAttack : MonoBehaviour {
     ps = GetComponent<PlayerStats>();
   }
 
-  void Update () {
+  void Update()
+  {
     if (Input.GetMouseButtonDown(0))
     {
       if (currentAttackMode == AttackMode.Melee)
@@ -33,7 +37,7 @@ public class PlayerTempAttack : MonoBehaviour {
           IDamageable damageable = obj.GetComponentInParent<IDamageable>();
           if (damageable != null && damageable != ps)
           {
-            ps.Attack(damageable, obj.gameObject);
+            Attack(damageable, obj.gameObject);
           }
         }
       }
@@ -42,7 +46,7 @@ public class PlayerTempAttack : MonoBehaviour {
         Ray ray = new Ray(gunBarrle.position, gunBarrle.forward);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 10F ))
+        if (Physics.Raycast(ray, out hit, 10F))
         {
           if (hit.collider.GetComponentInParent<IDamageable>() != null)
           {
@@ -62,5 +66,10 @@ public class PlayerTempAttack : MonoBehaviour {
       Gizmos.DrawWireSphere(playerBody.transform.position + playerBody.transform.forward, 2);
 
     }
+  }
+
+  public void Attack(IDamageable other, GameObject otherObj)
+  {
+    other.Damage(attackDamage, transform.name);
   }
 }
