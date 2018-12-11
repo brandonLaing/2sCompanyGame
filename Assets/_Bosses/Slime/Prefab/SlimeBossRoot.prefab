@@ -19,9 +19,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4087043580087948}
+  - component: {fileID: 114042541469128240}
   - component: {fileID: 54622453025494964}
   - component: {fileID: 65126619135751192}
-  - component: {fileID: 114211585922421788}
   m_Layer: 13
   m_Name: GroundChecker
   m_TagString: Untagged
@@ -37,11 +37,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4073636051100016}
+  - component: {fileID: 114617462210760528}
   - component: {fileID: 54264647777149390}
   - component: {fileID: 65766104472005826}
   - component: {fileID: 33732228543286098}
   - component: {fileID: 23653991990722490}
-  - component: {fileID: 114767329880928150}
   m_Layer: 9
   m_Name: SlimeBossBody
   m_TagString: Untagged
@@ -57,7 +57,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4432766261903476}
-  - component: {fileID: 114296565628166754}
+  - component: {fileID: 114542816454772724}
   - component: {fileID: 54128288892506668}
   - component: {fileID: 65059068242917914}
   m_Layer: 10
@@ -75,7 +75,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4952690351234898}
-  - component: {fileID: 114109230903647874}
   m_Layer: 0
   m_Name: SlimeBossRoot
   m_TagString: Untagged
@@ -153,7 +152,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 67fbef02e89542c4faaf45bd3f2ede25, type: 2}
+  - {fileID: 2100000, guid: 9c51488b01adad94fbc664c732f2d9bf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -261,24 +260,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114109230903647874
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1913922630663836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f895f49d68c7c547b74a2e6409b390e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthMin: 0
-  healthMax: 0
-  healthPerSecond: 0
-  onlyInCombat: 0
-  inCombat: 0
-  deathEffect: {fileID: 0}
---- !u!114 &114211585922421788
+--- !u!114 &114042541469128240
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -286,13 +268,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1155446849495184}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e49316c5a172804f83fef1d9a3c571c, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a4ba39890a6ec248a7347ea1ccf8951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sm: {fileID: 0}
-  tf: {fileID: 0}
+  sm: {fileID: 114617462210760528}
+  tf: {fileID: 4073636051100016}
   touchingGround: 0
---- !u!114 &114296565628166754
+--- !u!114 &114542816454772724
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -300,12 +282,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1579646261944782}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73b4ed997b9f0bc41a4a94949b6d5fb1, type: 3}
+  m_Script: {fileID: 11500000, guid: 380c7eb4e854e6e468c7fcaf00808e56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sm: {fileID: 0}
-  tf: {fileID: 0}
---- !u!114 &114767329880928150
+  sm: {fileID: 114617462210760528}
+  tf: {fileID: 4073636051100016}
+--- !u!114 &114617462210760528
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -313,22 +295,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1556559871463408}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e280549b35f30c94d8ee1f737fd77ae0, type: 3}
+  m_Script: {fileID: 11500000, guid: 133a98c6b48996f489178539609c75b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myState: 0
+  myState: 2
   healthMax: 100
-  healthMin: 20
+  healthMin: 0
   _health: 0
   healthSizeScaler: 10
   damagePerSecond: 5
   damageOnImpact: 0
   jumpForce: 5
-  jumpForceStepPerDamage: 1
-  HitGroundWaitTime: 2
+  jumpForceStepPerDamage: 0
+  HitGroundWaitTime: 0.5
   fallMultiplier: 2.5
-  rotationRate: 90
-  stopLookingAngle: 2
+  rotationRate: 1
+  stopLookingAngle: 10
   target: {fileID: 0}
   testDamage: 0
   doTestDamage: 0

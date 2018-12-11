@@ -16,8 +16,12 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerCameraFollowScript))]
 [RequireComponent(typeof(PlayerRotator))]
 [RequireComponent(typeof(PlayerAnimationController))]
-public class PlayerStats : MonoBehaviour, IKillable
+public class PlayerStats : MonoBehaviour, IDamageable, IKillable, IAttacking
 {
+  [Header("Health")]
+  public int maxHealth = 20;
+  public float health = 20;
+
   [Header("Movement")]
   public float playerSpeedWalking = 5F;
   public float playerSpeedRunning = 10F;
@@ -45,12 +49,44 @@ public class PlayerStats : MonoBehaviour, IKillable
       Cursor.visible = false;
     }
   }
-
   #region Life Function
+  public void Damage(float damage, string obj)
+  {
+    if (health - damage <= 0)
+    {
+      Kill();
+      return;
+    }
+
+    health -= damage;
+  }
+
+  public void Heal(int heal)
+  {
+    if (health + heal >= maxHealth)
+    {
+      health = maxHealth;
+      return;
+    }
+
+    health += heal;
+  }
+
+  public void HealToMax()
+  {
+    health = maxHealth;
+  }
+
   public void Kill()
   {
-        throw new NotImplementedException("Implement Player Death");
-    }
+    //throw new NotImplementedException("Implement Death");
+  }
+
+  public void Attack(IDamageable other, GameObject otherObj)
+  {
+    Debug.LogWarning(this.gameObject.name + " is attacking " + otherObj);
+    other.Damage(10, gameObject.name);
+  }
   #endregion
 
 }

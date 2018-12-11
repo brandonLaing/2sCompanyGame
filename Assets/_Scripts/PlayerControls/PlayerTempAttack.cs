@@ -2,56 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum AttackMode
-{
-  Melee, Ranged
-}
-
-public class PlayerTempAttack : MonoBehaviour, IAttacking
-{
+public class PlayerTempAttack : MonoBehaviour {
 
   private PlayerStats ps;
   public Transform playerBody;
   public Transform representation;
-
-  public Transform gunBarrle;
-
-  public float attackDamage;
-
-  public AttackMode currentAttackMode;
 
   private void Start()
   {
     ps = GetComponent<PlayerStats>();
   }
 
-  void Update()
-  {
+  void Update () {
     if (Input.GetMouseButtonDown(0))
     {
-      if (currentAttackMode == AttackMode.Melee)
+      Collider[] hitObjects = Physics.OverlapSphere(playerBody.transform.position + transform.forward, 2);
+      foreach (Collider obj in hitObjects)
       {
-        Collider[] hitObjects = Physics.OverlapSphere(playerBody.transform.position + transform.forward, 2);
-        foreach (Collider obj in hitObjects)
+        IDamageable damageable = obj.GetComponentInParent<IDamageable>();
+        if (damageable != null && damageable != ps)
         {
-          IDamageable damageable = obj.GetComponentInParent<IDamageable>();
-          if (damageable != null && damageable != ps)
-          {
-            Attack(damageable, obj.gameObject);
-          }
-        }
-      }
-      else if (currentAttackMode == AttackMode.Ranged)
-      {
-        Ray ray = new Ray(gunBarrle.position, gunBarrle.forward);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, 10F))
-        {
-          if (hit.collider.GetComponentInParent<IDamageable>() != null)
-          {
-            hit.collider.GetComponentInParent<IDamageable>().Damage(10, transform.name);
-          }
+          ps.Attack(damageable, obj.gameObject);
         }
       }
     }
@@ -66,10 +37,5 @@ public class PlayerTempAttack : MonoBehaviour, IAttacking
       Gizmos.DrawWireSphere(playerBody.transform.position + playerBody.transform.forward, 2);
 
     }
-  }
-
-  public void Attack(IDamageable other, GameObject otherObj)
-  {
-    other.Damage(attackDamage, transform.name);
   }
 }

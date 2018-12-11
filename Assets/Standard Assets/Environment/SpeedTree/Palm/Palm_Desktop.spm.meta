@@ -1,7 +1,6 @@
 fileFormatVersion: 2
-guid: 26cc649b195d60441ba1ac42403a41f4
+guid: d027af1092f6b434090f040565e7e656
 SpeedTreeImporter:
-  externalObjects: {}
   serializedVersion: 4
   mainColor: {r: 1, g: 1, b: 1, a: 1}
   hueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}
@@ -34,8 +33,8 @@ SpeedTreeImporter:
     enableHue: 1
     windQuality: 5
   - height: 0.01
-    castShadows: 1
-    receiveShadows: 1
+    castShadows: 0
+    receiveShadows: 0
     useLightProbes: 0
     reflectionProbeUsage: 0
     enableBump: 1
