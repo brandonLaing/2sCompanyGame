@@ -7,12 +7,12 @@ public class SlimePlayerChecker : MonoBehaviour
   public SlimeMovementScript sm;
   public Transform tf;
 
-	void Update ()
-  {
-    transform.position = tf.position;
-    transform.rotation = tf.rotation;
-    transform.localScale = tf.localScale;
-	}
+	//void Update ()
+ // {
+ //   transform.position = tf.position;
+ //   transform.rotation = tf.rotation;
+ //   transform.localScale = tf.localScale;
+	//}
 
   private void OnTriggerEnter(Collider other)
   {
