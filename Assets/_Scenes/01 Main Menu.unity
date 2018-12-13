@@ -38,13 +38,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -446,6 +446,7 @@ GameObject:
   - component: {fileID: 968056945}
   - component: {fileID: 968056944}
   - component: {fileID: 968056948}
+  - component: {fileID: 968056949}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -545,6 +546,21 @@ MonoBehaviour:
   sceneToLoad: 
   waitTime: 0
   loadOnStart: 0
+--- !u!114 &968056949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 968056943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d9c8128643b6f499491b87af394d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 1427934244913094, guid: f0d0214999bd25f4fa7720f4b1d40447,
+    type: 2}
+  sceneName: OverWorld
+  spawnPosition: {x: 280, y: 160, z: 200}
 --- !u!1 &1017567937
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,9 +992,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 968056948}
-        m_MethodName: LoadScene
-        m_Mode: 5
+      - m_Target: {fileID: 968056949}
+        m_MethodName: StartGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

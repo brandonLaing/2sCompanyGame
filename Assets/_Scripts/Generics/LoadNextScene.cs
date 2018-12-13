@@ -28,6 +28,6 @@ public class LoadNextScene : MonoBehaviour
 
   public void LoadScene(string sceneToLoad)
   {
-    UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoad);
+    GameObject.FindGameObjectWithTag("SceneManager").GetComponent<GameSceneManager>().LoadNewScene(sceneToLoad);
   }
 }

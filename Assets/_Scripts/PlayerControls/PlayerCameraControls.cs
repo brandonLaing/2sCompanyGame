@@ -6,7 +6,8 @@ public class PlayerCameraControls : MonoBehaviour
 {
   private PlayerStats myStats;
 
-  public Transform CameraTransform;
+  public Transform cameraRootTransform;
+  public Transform cameraTransform;
 
   public float mouseX;
   public float mouseY;
@@ -39,7 +40,7 @@ public class PlayerCameraControls : MonoBehaviour
 
     mouseX = Input.GetAxis("Mouse X");
 
-    CameraTransform.Rotate(Vector3.up, mouseX * cameraInvertXFloat * myStats.cameraHorizontalRotationSpeedMultiplier * Time.deltaTime, Space.World);
+    cameraRootTransform.Rotate(Vector3.up, mouseX * cameraInvertXFloat * myStats.cameraHorizontalRotationSpeedMultiplier * Time.deltaTime, Space.World);
   }
 
   // controls the Y rotation
@@ -47,7 +48,7 @@ public class PlayerCameraControls : MonoBehaviour
   {
     mouseY = Input.GetAxis("Mouse Y");
 
-    float angelEulerLimit = CameraTransform.eulerAngles.x;
+    float angelEulerLimit = cameraTransform.eulerAngles.x;
 
     if (angelEulerLimit > 180)
     {
@@ -73,7 +74,7 @@ public class PlayerCameraControls : MonoBehaviour
 
     if (targetRotation < myStats.cameraVerticalMaxView && targetRotation > myStats.cameraVerticalMinView)
     {
-      CameraTransform.eulerAngles += new Vector3(mouseY * cameraInvertYFloat * myStats.cameraVerticleRotationSpeedMulitplier * Time.deltaTime, 0, 0);
+      cameraTransform.eulerAngles += new Vector3(mouseY * cameraInvertYFloat * myStats.cameraVerticleRotationSpeedMulitplier * Time.deltaTime, 0, 0);
 
     }
   }

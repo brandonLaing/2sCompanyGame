@@ -653,7 +653,7 @@ GameObject:
   - component: {fileID: 114195489930564314}
   m_Layer: 11
   m_Name: OurNewPlayerRoot
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1504,7 +1504,7 @@ GameObject:
   - component: {fileID: 4124866868997646}
   - component: {fileID: 136163252015474162}
   - component: {fileID: 54819172282743096}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: EthanSkeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2153,7 +2153,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1427934244913094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.3575335, y: -1.5576484e-17, z: 10.522537}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4586398245684394}
@@ -3232,9 +3232,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followObject: {fileID: 4124866868997646}
   followingObject: {fileID: 4345519755397664}
-  slowFollowSpeed: 10
+  slowFollowSpeed: 20
   fastFollowSpeed: 20
-  rangeSlow: 1
+  rangeSlow: 0.1
   rangeFast: 10
   stopFollowingRange: 0.01
   ableToSnap: 1
@@ -3264,7 +3264,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 507b13428f05593438b12a841293b578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CameraTransform: {fileID: 4345519755397664}
+  cameraRootTransform: {fileID: 0}
+  cameraTransform: {fileID: 0}
   mouseX: 0
   mouseY: 0
 --- !u!114 &114623042365872872
@@ -3374,11 +3375,11 @@ CapsuleCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1962730519451166}
-  m_Material: {fileID: 13400000, guid: c2815a7ab32e42c4bb42f59caacb8ec1, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.3
-  m_Height: 1.6
+  m_Radius: 0.39
+  m_Height: 1.78
   m_Direction: 1
   m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!136 &136181356016842324

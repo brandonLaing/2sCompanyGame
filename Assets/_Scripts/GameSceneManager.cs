@@ -36,16 +36,13 @@ public class GameSceneManager : MonoBehaviour
     SceneManager.LoadScene(newScene, LoadSceneMode.Additive);
 
     currentScene = newScene;
-    Debug.Log(ActiveScene.name);
 
-    WaitThenSetActive(SetSceneActive);
-
-    
+    StartCoroutine(WaitThenSetActive(SetSceneActive));
   }
 
   public void SetSceneActive()
   {
-
+    SceneManager.SetActiveScene(ActiveScene);
   }
 
   public void LoadNewScene(string newScene, Transform player, Vector3 spawnLocation)
@@ -56,6 +53,15 @@ public class GameSceneManager : MonoBehaviour
 
     player.position = spawnLocation;
     player.parent = null;
+  }
+
+  public void LoadNewScene(string newScene, GameObject playerPrefab, Vector3 spawnLocation)
+  {
+    var player =Instantiate(playerPrefab, spawnLocation, Quaternion.identity, this.transform);
+    
+    LoadNewScene(newScene);
+
+    player.transform.parent = null;
   }
 
   private IEnumerator WaitThenSetActive(WaitThenDo methodToDo)
