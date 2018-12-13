@@ -161,14 +161,20 @@ public class MoleBossMovement : MonoBehaviour
     switchState(newState);
   }
 
+  private void OnTriggerEnter(Collider other)
+  {
+    if (other.tag == "Player")
+    {
+      Debug.Log("Hit Player");
+      other.GetComponentInParent<IDamageable>().Damage(stats.risingDamage, transform.name);
+    }
+  }
   private void OnTriggerStay(Collider other)
   {
-
     if (other.tag == "Player")
     {
     Debug.Log("Hit Player");
-      other.GetComponent<Rigidbody>().AddForce(Vector3.up * stats.fromUndergroundForce);
+      other.GetComponentInParent<Rigidbody>().AddForce(Vector3.up * stats.fromUndergroundForce);
     }
   }
-
 }

@@ -23,5 +23,17 @@ public class MoleBossStats : MonoBehaviour
   public float undergroundY;
   public float fromUndergroundForce;
   public float fromUndergroundRadius;
+  public float risingDamage;
 
+  private void Update()
+  {
+    if (targetingPlayer == null)
+    {
+      var player = GameObject.FindGameObjectWithTag("Player");
+      if (player != null)
+      {
+        targetingPlayer = player;
+      }
+    }
+  }
 }

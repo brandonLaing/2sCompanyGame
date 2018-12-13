@@ -18,26 +18,20 @@ public class SlimePlayerChecker : MonoBehaviour
   {
     if (other.tag == "Player")
     {
-
-      if (other.GetComponent<IDamageable>() != null)
+      if (other.GetComponentInParent<IDamageable>() != null)
       {
+        Debug.Log("getting Damageable");
+
         sm.ImpactAttack(other.GetComponentInParent<IDamageable>());
         return;
       }
-
-      if (other.GetComponentInParent<IDamageable>() != null)
-      {
-
-      }
     }
-
   }
 
   private void OnTriggerStay(Collider other)
   {
     if (other.tag == "Player")
     {
-
       IDamageable damageAble = other.GetComponentInParent<IDamageable>();
 
       if (damageAble != null && other.gameObject != null)

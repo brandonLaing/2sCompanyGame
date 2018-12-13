@@ -5,6 +5,7 @@ using UnityEngine;
 public class HealthSystem : MonoBehaviour, IDamageable
 {
   [Header("Health Settings")]
+  public float startingHealth;
   public float healthMin;
   public float healthMax;
 
@@ -14,7 +15,7 @@ public class HealthSystem : MonoBehaviour, IDamageable
   public bool inCombat;
 
   [Space(10)]
-  private float _health;
+  public float _health;
   public float Health
   {
     get { return _health; }
@@ -42,6 +43,11 @@ public class HealthSystem : MonoBehaviour, IDamageable
   [Header("Debug Features")]
   private bool damageImmune;
 
+  private void Start()
+  {
+    Health = healthMax;
+  }
+
   // heals for that ammount
   public void Heal(float heal)
   {
@@ -63,6 +69,13 @@ public class HealthSystem : MonoBehaviour, IDamageable
   // kills objects
   public virtual void Kill()
   {
+    if (this.transform.tag == "Player")
+    {
+      HealToMax();
+      GameObject.FindGameObjectWithTag("SceneManager").GetComponent<GameSceneManager>().LoadNewScene("01 Main Menu");
+      Destroy(this.gameObject);
+    }
+
     if (deathEffect != null)
     {
       Instantiate(deathEffect, transform.position, Quaternion.identity);
