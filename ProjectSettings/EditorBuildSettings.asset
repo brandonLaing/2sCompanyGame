@@ -6,6 +6,39 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/_Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/_Scenes/00 Splash.unity
+    guid: 517f1a1a8b7b25846b06d25d8ffc12ef
+  - enabled: 1
+    path: Assets/_Scenes/01 Main Menu.unity
+    guid: 1c070c21d86749044affea91bb7711e5
+  - enabled: 1
+    path: Assets/_Scenes/02 Credits.unity
+    guid: 051ac387e665c6b44aec5639e2009e91
+  - enabled: 1
+    path: Assets/_Scenes/03 Options.unity
+    guid: 788c94182c7d05b48a7319ef71fe7f63
+  - enabled: 1
+    path: Assets/_Scenes/MoleArena.unity
+    guid: 290b54c6d0db4364ca95b356e7907311
+  - enabled: 1
+    path: Assets/_Scenes/MoleBossTestLevel.unity
+    guid: 907c43d561166834aad9bafe3b7075dd
+  - enabled: 1
+    path: Assets/_Scenes/Overworld.unity
+    guid: d60a410bc85f0cc4a8cfe4b3200e3ac1
+  - enabled: 1
+    path: Assets/_Scenes/SlimeArena.unity
+    guid: e7ab40229588ba4429fdbf1b09447a75
+  - enabled: 1
+    path: Assets/_Scenes/SlimeBossTestLevel.unity
+    guid: 2c1a92db27b21b84c85780817e95746a
+  - enabled: 1
+    path: Assets/_Scenes/Testing.unity
+    guid: 3accca4fcdf9ac74b8b6fab3aea7065e
+  - enabled: 1
+    path: Assets/_Scenes/UI Testing.unity
+    guid: 29131ecd2241add479dc49d864221e5f
   m_configObjects: {}
