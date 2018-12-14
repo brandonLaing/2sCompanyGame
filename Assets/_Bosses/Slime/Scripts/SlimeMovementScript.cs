@@ -78,6 +78,13 @@ public class SlimeMovementScript : MonoBehaviour, IDamageable, IAttacking, IKill
 
   private void Update()
   {
+    if (target == null)
+    {
+      if (GameObject.FindGameObjectWithTag("Player") != null)
+      {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+      }
+    }
     switch (myState)
     {
       case SlimeState.Falling:

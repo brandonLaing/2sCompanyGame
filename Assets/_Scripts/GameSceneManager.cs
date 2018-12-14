@@ -58,7 +58,6 @@ public class GameSceneManager : MonoBehaviour
   public void LoadNewScene(string newScene, GameObject playerPrefab, Vector3 spawnLocation)
   {
     var player =Instantiate(playerPrefab, spawnLocation, Quaternion.identity, this.transform);
-    
     LoadNewScene(newScene);
 
     player.transform.parent = null;

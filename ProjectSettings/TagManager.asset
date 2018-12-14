@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - SceneManager
   - Boss
+  - PlayerGrabber
   layers:
   - Default
   - TransparentFX

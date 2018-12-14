@@ -23,23 +23,38 @@ public class CheatStuff : MonoBehaviour
     Debug.Log(sb);
 
   }
-  void Update ()
+  void Update()
   {
-		if (Input.GetKeyDown(KeyCode.Keypad0))
+    if (Input.GetKeyDown(KeyCode.Keypad0))
     {
+      var playerParent = GameObject.FindGameObjectWithTag("Player");
+      if (playerParent != null)
+        Destroy(playerParent.GetComponentInParent<HealthSystem>().gameObject);
       GameObject.FindGameObjectWithTag("SceneManager").GetComponent<GameSceneManager>().LoadNewScene("01 Main Menu");
+
     }
     if (Input.GetKeyDown(KeyCode.Keypad1))
     {
-      GameObject.FindGameObjectWithTag("SceneManager").GetComponent<GameSceneManager>().LoadNewScene("Overworld");
+      var playerParent = GameObject.FindGameObjectWithTag("Player");
+      if (playerParent != null)
+        Destroy(playerParent.GetComponentInParent<HealthSystem>().gameObject);
+      GameObject.FindGameObjectWithTag("SceneManager").GetComponent<GameSceneManager>().LoadNewScene("Overworld", playerPrefab, new Vector3(280, 160, 200));
     }
     if (Input.GetKeyDown(KeyCode.Keypad2))
     {
-      GameObject.FindGameObjectWithTag("SceneManager").GetComponent<GameSceneManager>().LoadNewScene("SlimeArena");
+      var playerParent = GameObject.FindGameObjectWithTag("Player");
+      if (playerParent != null)
+        Destroy(playerParent.GetComponentInParent<HealthSystem>().gameObject);
+      GameObject.FindGameObjectWithTag("SceneManager").GetComponent<GameSceneManager>().LoadNewScene("SlimeArena", playerPrefab, new Vector3(210, 105, 340));
+
     }
     if (Input.GetKeyDown(KeyCode.Keypad3))
     {
-      GameObject.FindGameObjectWithTag("SceneManager").GetComponent<GameSceneManager>().LoadNewScene("MoleArena");
+      var playerParent = GameObject.FindGameObjectWithTag("Player");
+      if (playerParent != null)
+        Destroy(playerParent.GetComponentInParent<HealthSystem>().gameObject);
+      GameObject.FindGameObjectWithTag("SceneManager").GetComponent<GameSceneManager>().LoadNewScene("MoleArena", playerPrefab, new Vector3(253, 10, 271));
+
     }
     if (Input.GetKeyDown(KeyCode.Keypad4))
     {

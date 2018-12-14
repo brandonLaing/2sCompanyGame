@@ -196,7 +196,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 127970270}
-  - component: {fileID: 127970271}
   m_Layer: 0
   m_Name: ToSlimeArena
   m_TagString: Untagged
@@ -218,19 +217,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &127970271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 127970269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd2d2a30170e40d4e905c783729eee75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arenaToLoad: SlimeArena
-  position: {x: 0, y: 0, z: 0}
 --- !u!1 &167830487
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,6 +228,8 @@ GameObject:
   - component: {fileID: 167830491}
   - component: {fileID: 167830490}
   - component: {fileID: 167830489}
+  - component: {fileID: 167830492}
+  - component: {fileID: 167830493}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -281,7 +269,7 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 167830487}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -317,6 +305,35 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 167830487}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &167830492
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 167830487}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!114 &167830493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 167830487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd2d2a30170e40d4e905c783729eee75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arenaToLoad: SlimeArena
+  position: {x: 210, y: 130, z: 340}
+  loadingNextScene: 0
 --- !u!1 &211979915
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,7 +1535,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-573712
+  m_Name: pb_Mesh32028
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -10627,7 +10644,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-665642
+  m_Name: pb_Mesh31982
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -10942,7 +10959,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-597858
+  m_Name: pb_Mesh32144
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -11097,7 +11114,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-670058
+  m_Name: pb_Mesh32188
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -11255,7 +11272,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1188892222}
-  - component: {fileID: 1188892223}
   m_Layer: 0
   m_Name: ToMoleArena
   m_TagString: Untagged
@@ -11277,25 +11293,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1188892223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1188892221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd2d2a30170e40d4e905c783729eee75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arenaToLoad: MoleArena
-  position: {x: -322, y: 0, z: -117}
 --- !u!43 &1215557606
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-601572
+  m_Name: pb_Mesh32068
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -26220,7 +26223,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-608646
+  m_Name: pb_Mesh32116
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -30250,7 +30253,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-590280
+  m_Name: pb_Mesh32008
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -30523,6 +30526,7 @@ GameObject:
   - component: {fileID: 2025580734}
   - component: {fileID: 2025580733}
   - component: {fileID: 2025580732}
+  - component: {fileID: 2025580735}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -30561,7 +30565,7 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2025580730}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -30597,6 +30601,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2025580730}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2025580735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2025580730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd2d2a30170e40d4e905c783729eee75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arenaToLoad: MoleArena
+  position: {x: -322, y: 0, z: -117}
+  loadingNextScene: 0
 --- !u!1 &2046283137
 GameObject:
   m_ObjectHideFlags: 0

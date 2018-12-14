@@ -6,12 +6,16 @@ public class ArenaEntrance : MonoBehaviour
 {
   public string arenaToLoad;
   public Vector3 position;
+  public bool loadingNextScene;
 
   private void OnTriggerEnter(Collider other)
   {
-    if (other.transform.tag == "Player")
+    if (other.transform.tag == "Player" && !loadingNextScene)
     {
-      GameObject.FindGameObjectWithTag("SceneManager").GetComponent<GameSceneManager>().LoadNewScene(arenaToLoad, other.transform, position);
+      loadingNextScene = true;
+      Debug.Log("player entered " + transform.name);
+
+      GameObject.FindGameObjectWithTag("SceneManager").GetComponent<GameSceneManager>().LoadNewScene(arenaToLoad, other.transform.GetComponentInParent<HealthSystem>().transform, position);
     }
   }
 }

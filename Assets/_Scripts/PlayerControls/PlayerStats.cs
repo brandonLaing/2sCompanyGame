@@ -41,6 +41,14 @@ public class PlayerStats : MonoBehaviour
   public bool cameraInvertY = true;
   public bool cameraInvertX = false;
 
+  private void Start()
+  {
+    if (GameObject.FindGameObjectWithTag("PlayerGrabber") != null)
+    {
+      transform.parent = GameObject.FindGameObjectWithTag("PlayerGrabber").transform;
+      transform.parent = null;
+    }
+  }
   private void Update()
   {
     if (Input.GetKeyDown(KeyCode.L) && Input.GetKey(KeyCode.LeftShift))
